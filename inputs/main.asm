@@ -1,6 +1,6 @@
 ; main.asm
 ; Author: w4ne
-; Date: 20/02/2022
+; Date: 23/02/2022
 
 global _start 
 
@@ -35,5 +35,5 @@ section .bss
     answer resb 12
 
 section .data
-    message db "How are you? ", 0xA
+    message db "How are you? ", 13
     mlength equ $ - message
