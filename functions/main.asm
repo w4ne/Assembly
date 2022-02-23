@@ -1,16 +1,13 @@
 ; main.asm
 ; Author: w4ne
-; Date: 21/02/2022
+; Date: 23/02/2022
 
 global _start
 
 section .text
 _start:
-    call _print
-
-    mov rax, 60
-    mov rdi, 0
-    syscall
+    call _print ; Prints "Hello World!"
+    call _exit  ; Sets registers to 0 and exits
     ret
 
 _print:
@@ -21,6 +18,16 @@ _print:
     syscall
     ret
 
+_exit:
+    xor rax, rax
+    xor rdi, rdi
+    xor rsi, rsi
+    xor rdx, rdx
+
+    mov rax, 60
+    syscall
+    ret
+
 section .data
-    message db "Hello World!", 0xA
+    message db "Hello World!", 12
     mlength equ $ - message
