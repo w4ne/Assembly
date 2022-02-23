@@ -1,6 +1,6 @@
 ; main.asm
 ; Author: w4ne
-; Date: 20/02/2022
+; Date: 23/02/2022
 
 global _start
 
@@ -18,5 +18,5 @@ _start:
     ret 
 
 section .data
-    msg db "Hello World!", 0xA
+    msg db "Hello World!", 12
     len equ $ - msg
